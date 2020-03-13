@@ -1,3 +1,4 @@
+from __future__ import print_function
 import random
 
 from .func import *
@@ -11,7 +12,8 @@ class Store:
 		self.parent = company
 		self.pos = pos
 		self.sale_price = company.sale_price
-		self.store_cost = (random.randint(90, 110)/100) * company.store_cost_avg
+
+		self.store_cost = (random.randint(90, 110)/100.0) * company.store_cost_avg
 
 		self.active = True
 
@@ -41,3 +43,6 @@ class Store:
 	@property
 	def costs(self):
 		return round_pence(self._costs)
+
+	def output(self):
+		pass

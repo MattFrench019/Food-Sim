@@ -54,7 +54,7 @@ class Board:
 				num_stores += 1
 
 			# Set up stores for the company
-			for __ in range(0, num_stores):     # Create x number of stores
+			for __ in range(0, int(num_stores)):     # Create x number of stores
 				pos = self.get_place()          # Get a valid place
 				store = Store(company, pos)     # Create the company
 				self.place(store)               # Add it to the board
@@ -77,7 +77,7 @@ class Board:
 		return self._num_companies
 
 	def build_houses(self, houses):
-		for _ in range(0, houses):
+		for _ in range(0, int(houses)):
 			pos = self.get_place()
 
 			closest_stores = self.calc_closest(pos)
@@ -152,7 +152,7 @@ class Board:
 		def house_event():
 			def callback():
 				rand = rand_range_float(Events.houses.amount)   # Pick percent of new houses
-				num = round(len(self.houses) * rand)            # Calc num of houses
+				num = int(len(self.houses) * rand)            # Calc num of houses
 				self.build_houses(num)                          # Create the objects
 				self.log.houses_build(num)                     # Add to the log
 			self._do_event(Events.houses.prob, callback)

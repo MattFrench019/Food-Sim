@@ -1,16 +1,15 @@
-from typing import *
 
 
 class CompanyType:
 	def __init__(self,
-		name: str,
-		store_costs: Tuple[float, float],
-		sale_price: Tuple[float, float],
-		cost_per_meal: Tuple[float, float],
-		stores_multiplier: float,
-		sales_multiplier: float,
-		store_close_limit: float,
-		store_open_limit: float,
+		name,
+		store_costs,
+		sale_price,
+		cost_per_meal,
+		stores_multiplier,
+		sales_multiplier,
+		store_close_limit,
+		store_open_limit,
 	):
 
 		self.name = name

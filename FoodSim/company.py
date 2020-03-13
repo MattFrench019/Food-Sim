@@ -1,5 +1,6 @@
+# coding=utf-8
+
 import random
-from typing import *
 
 from .func import *
 from .store import *
@@ -46,8 +47,8 @@ class Company:
 	@property
 	def sales(self):
 		sales = 0.0
-		stores = self.stores.copy()
-		stores += self.stores_inactive.copy()
+		stores = self.stores[:]
+		stores += self.stores_inactive[:]
 
 		for store in stores:
 			sales += store.sales
@@ -56,8 +57,8 @@ class Company:
 	@property
 	def costs(self):
 		costs = 0.0
-		stores = self.stores.copy()
-		stores += self.stores_inactive.copy()
+		stores = self.stores[:]
+		stores += self.stores_inactive[:]
 
 		for store in stores:
 			costs += store.costs
@@ -73,3 +74,5 @@ class Company:
 		print("    £{} profit".format(self.total))
 		print("    £{} sales".format(self.sales))
 		print("    £{} costs".format(self.costs))
+		for store in self.stores:
+			store.output()
