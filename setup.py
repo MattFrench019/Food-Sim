@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='matts-food-sim',
-    version='1.0.1',
+    version='1.1',
     packages=find_packages(),
     license='MIT',
     description="Python package for simulating a town's food consumption",

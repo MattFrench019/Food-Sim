@@ -1,10 +1,13 @@
 import random
 
 from .func import *
+from .id import rand_id
 
 
 class Store:
 	def __init__(self, company, pos):
+		self.id = rand_id("store")
+
 		self.parent = company
 		self.pos = pos
 		self.sale_price = company.sale_price

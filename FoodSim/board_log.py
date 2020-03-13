@@ -8,11 +8,15 @@ class BoardLog:
 		self._log = []
 
 	def store_remove(self, company):
-		msg = f"The {company.type.name} restaurant \"{company.name}\" has closed a store due to losses"
+		msg = "The {} restaurant \"{}\" has closed a store due to losses".format(company.type.name, company.id)
+		self._log.append(msg)
+
+	def houses_build(self, amount):
+		msg = "{} houses have been built in the town".format(amount)
 		self._log.append(msg)
 
 	def close(self, company):
-		msg = f"The {company.type.name} restaurant \"{company.name}\" has closed"
+		msg = "The {} restaurant \"{}\" has closed".format(company.type.name, company.id)
 		self._log.append(msg)
 
 	def output(self):

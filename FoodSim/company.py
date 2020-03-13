@@ -3,15 +3,15 @@ from typing import *
 
 from .func import *
 from .store import *
+from .id import rand_id
 
 
 class Company:
 	def __init__(self, _type, board):
+		self.id = rand_id("company")
+
 		self.type = _type
 		self.parent = board
-
-		# TODO Change
-		self.name = "Bob"
 
 		# Set up random variables based on company type
 		self.sale_price = round_pence(rand_range_float(_type.sale_price))
@@ -67,3 +67,9 @@ class Company:
 	def total(self):
 		return round_pence(self.sales - self.costs)
 
+
+	def output(self):
+		print("The {} company, \"{}\", has {} active stores and {} inactive stores, has made:".format(self.id, self.type.name, len(self.stores), len(self.stores_inactive)))
+		print("    £{} profit".format(self.total))
+		print("    £{} sales".format(self.sales))
+		print("    £{} costs".format(self.costs))

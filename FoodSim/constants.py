@@ -34,20 +34,9 @@ types = [
 ]
 
 
-class Events:
-	houses = {
-		"amount": (20, 200),
-		"prob": 0.2,
-	}
-	global_fixed_cost_rise = {
-		"amount": (0.1, 0.2),
-		"prob": ()
-	}
-
-
 class BoardProps:
 	length = 200
-	houses = 2_000
+	houses = 2000
 	companies = 7
 	shop_range = (2, 5)
 	company_types = types
@@ -59,3 +48,11 @@ class PersonProps:
 
 class HouseProps:
 	people = (1, 5)
+
+
+Prefix = {
+	"person": 'p-',
+	"house": 'h-',
+	"store": 's-',
+	"company": 'c-',
+}
